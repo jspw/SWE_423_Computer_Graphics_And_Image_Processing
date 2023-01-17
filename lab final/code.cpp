@@ -7,6 +7,7 @@ using namespace std;
 void drawPixel(int x, int y)
 {
     glBegin(GL_POINTS);
+    glPointSize(4.0);
     glVertex2i(x, y);
     glEnd();
 }
@@ -77,7 +78,7 @@ void BLDX(int x1, int y1, int x2, int y2, bool isDotted)
         }
         if (isDotted)
         {
-            if (count % 2 == 0)
+            if (count % 5 == 0)
                 drawPixel(x, y);
         }
         else
@@ -298,8 +299,8 @@ void display()
     // BLD(300, 300, 250, 250);
     // BLD(300, 300, 250, 250);
 
-    drawSUST();
-    // drawJanina();
+    // drawSUST();
+    drawJanina();
 
     // BLD(100, 100, 400, 400);
     // BLD(400, 400, 100, 100);
@@ -319,7 +320,7 @@ int main(int argc, char **argv)
     glutInitWindowPosition(0, 0);
     glutInitWindowSize(640, 480);
     /* Create the window with title "DDA_Line" */
-    glutCreateWindow("BRA ALGORITHM");
+    glutCreateWindow("Image Processing Lab Final");
     /* Initialize drawing colors */
     init();
     /* Call the displaying function */
